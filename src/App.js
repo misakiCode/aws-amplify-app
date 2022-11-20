@@ -16,6 +16,11 @@ function App({signOut, user }) {
   return (
     <div className="App">
       <h1>hello</h1>
+      <ul>
+        <li><a href='/'>login</a></li>
+        <li><a href='home'>home</a></li>
+        <li><a href='todo'>todo</a></li>
+      </ul>
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/home" element={<Home />} />
