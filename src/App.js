@@ -5,25 +5,25 @@ import { withAuthenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 
 import awsExports from "./aws-exports";
+import { Route, Routes } from 'react-router-dom';
+import Login from './pages/login';
+import Home from './pages/home';
+import Todo from './pages/todo';
+import NotFound from './pages/notfound';
 Amplify.configure(awsExports);
 
 function App({signOut, user }) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Hello</h2>
-        {user ? (
-          <>
-            <h3>ようこそ：{user.username}</h3>
-            <button onClick={signOut}>サインアウト</button>
-          </>
-        ) : (
-          <h3>権限がありません</h3>
-        )}
-      </header>
+      <h1>hello</h1>
+      <Routes>
+        <Route path="/" element={<Login />}></Route>
+        <Route path="/home" element={<Home />} />
+        <Route path="/todo" element={<Todo />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
 
-export default withAuthenticator (App);
+export default App;
