@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import { Amplify } from "aws-amplify";
 import { withAuthenticator } from "@aws-amplify/ui-react";
@@ -15,7 +16,7 @@ Amplify.configure(awsExports);
 function App({signOut, user }) {
   return (
     <div className="App">
-      <h1>hello</h1>
+   
       <ul>
         <li><a href='/'>login</a></li>
         <li><a href='home'>home</a></li>
